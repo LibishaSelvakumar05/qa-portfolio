@@ -1,0 +1,1634 @@
+ @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Manrope", sans-serif;
+    background: #f5f5f0;
+    color: #111111;
+    line-height: 1.6;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    height: 86px;
+
+    padding: 0 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #deded8;
+
+    background: rgba(245, 245, 240, 0.92);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(15px);
+}
+
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+
+.logo span {
+    color: #ff5c35;
+}
+
+
+.navbar nav {
+    display: flex;
+    gap: 27px;
+}
+
+
+.navbar nav a {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #666;
+
+    position: relative;
+
+    transition: 0.25s ease;
+}
+
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #111;
+}
+
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #ff5c35;
+
+    border-radius: 50%;
+
+    bottom: -9px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   COMMON
+========================================= */
+
+.eyebrow {
+    font-family: "DM Mono", monospace;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+
+.section {
+    width: min(1200px, 88%);
+
+    margin: auto;
+
+    padding: 120px 0;
+}
+
+
+.section-heading {
+    display: flex;
+
+    gap: 35px;
+
+    margin-bottom: 65px;
+}
+
+
+.section-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 17px;
+
+    color: #999;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(42px, 6vw, 76px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 100px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+.primary-btn {
+    background: #111;
+    color: white;
+}
+
+
+.primary-btn:hover {
+    background: #ff5c35;
+
+    transform: translateY(-3px);
+}
+
+
+.secondary-btn {
+    border: 1px solid #cfcfc8;
+    background: transparent;
+}
+
+
+.secondary-btn:hover {
+    border-color: #111;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    width: min(1200px, 88%);
+
+    min-height: calc(100vh - 86px);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 125px);
+
+    line-height: 0.86;
+
+    letter-spacing: -8px;
+
+    margin-bottom: 40px;
+}
+
+
+.hero h1 span {
+    color: #ff5c35;
+}
+
+
+.hero-description {
+    max-width: 580px;
+
+    color: #666;
+
+    font-size: 17px;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   HERO CARD
+========================================= */
+
+.hero-card {
+    background: #111;
+
+    color: white;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    min-height: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+}
+
+
+.status {
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    color: #bbb;
+
+    margin-bottom: 60px;
+}
+
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #6ee7a8;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    margin-right: 8px;
+}
+
+
+.hero-card-number {
+    font-size: 90px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -6px;
+}
+
+
+.hero-card-number span {
+    color: #ff5c35;
+
+    font-size: 45px;
+}
+
+
+.hero-card p {
+    color: #999;
+
+    margin-top: 10px;
+}
+
+
+.hero-card-line {
+    height: 1px;
+
+    background: #333;
+
+    margin: 40px 0 25px;
+}
+
+
+.mini-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.mini-grid div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.mini-grid strong {
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+}
+
+
+.mini-grid span {
+    font-size: 12px;
+
+    color: #888;
+}
+
+
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #d8d8d2;
+
+    border-left: 1px solid #d8d8d2;
+}
+
+
+.feature-card {
+    padding: 35px;
+
+    min-height: 320px;
+
+    border-right: 1px solid #d8d8d2;
+
+    border-bottom: 1px solid #d8d8d2;
+
+    transition: 0.3s ease;
+}
+
+
+.feature-card:hover {
+    background: #fff;
+
+    transform: translateY(-5px);
+}
+
+
+.feature-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 17px;
+
+    color: #999;
+}
+
+
+.feature-card h3 {
+    margin-top: 100px;
+
+    font-size: 23px;
+
+    letter-spacing: -1px;
+}
+
+
+.feature-card p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   DARK SECTION
+========================================= */
+
+.dark-section {
+    background: #111;
+
+    color: white;
+}
+
+
+.light-heading .eyebrow,
+.light-heading .section-number {
+    color: #777;
+}
+
+
+.project-preview-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.project-preview {
+    min-height: 330px;
+
+    padding: 35px;
+
+    border: 1px solid #292929;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+.project-preview:hover {
+    background: #1b1b1b;
+
+    transform: scale(0.99);
+}
+
+
+.project-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 15px;
+
+    color: #777;
+}
+
+
+.project-preview h3 {
+    font-size: 52px;
+
+    letter-spacing: -3px;
+
+    margin-top: 90px;
+}
+
+
+.project-preview p {
+    color: #888;
+
+    margin-top: 5px;
+}
+
+
+.project-arrow {
+    position: absolute;
+
+    right: 35px;
+
+    bottom: 30px;
+
+    font-size: 30px;
+
+    color: #ff5c35;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta-section {
+    text-align: center;
+
+    padding: 150px 20px;
+}
+
+
+.cta-section h2 {
+    font-size: clamp(48px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero {
+    width: min(1200px, 88%);
+
+    margin: auto;
+
+    padding: 150px 0 100px;
+}
+
+
+.page-hero h1 {
+    font-size: clamp(65px, 9vw, 120px);
+
+    line-height: 0.87;
+
+    letter-spacing: -7px;
+}
+
+
+.page-hero h1 span {
+    color: #ff5c35;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-layout {
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    gap: 100px;
+}
+
+
+.large-text {
+    font-size: 28px !important;
+
+    color: #222 !important;
+
+    line-height: 1.3;
+}
+
+
+.about-layout p {
+    max-width: 720px;
+
+    color: #666;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+.info-card {
+    background: #fff;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    height: fit-content;
+}
+
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.info-row span {
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+.info-row strong {
+    font-size: 13px;
+}
+
+
+.light-section {
+    background: #ebece7;
+}
+
+
+.timeline {
+    border-left: 1px solid #ccc;
+}
+
+
+.timeline-item {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 40px;
+
+    padding: 45px 0 45px 35px;
+
+    border-bottom: 1px solid #d2d2cc;
+}
+
+
+.timeline-item > span {
+    font-family: "DM Mono", monospace;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+.timeline-item h3 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+.timeline-item p {
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   EXPERIENCE
+========================================= */
+
+.experience-card {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 50px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid #ddd;
+
+    transition: 0.3s ease;
+}
+
+
+.experience-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+}
+
+
+.experience-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.experience-header h2 {
+    font-size: 36px;
+
+    letter-spacing: -2px;
+}
+
+
+.experience-header h3 {
+    color: #777;
+
+    font-weight: 500;
+
+    margin-top: 5px;
+}
+
+
+.experience-date {
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    color: #888;
+
+    white-space: nowrap;
+}
+
+
+.experience-body {
+    padding-top: 35px;
+}
+
+
+.experience-body > p {
+    color: #666;
+
+    max-width: 800px;
+
+    margin-bottom: 30px;
+}
+
+
+.check-list {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px 40px;
+}
+
+
+.check-list li {
+    font-size: 14px;
+
+    color: #555;
+
+    padding-left: 25px;
+
+    position: relative;
+}
+
+
+.check-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #ff5c35;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skill-category {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    padding: 55px 0;
+
+    border-top: 1px solid #d5d5cf;
+}
+
+
+.skill-title {
+    display: flex;
+
+    gap: 20px;
+}
+
+
+.skill-title span {
+    font-family: "DM Mono", monospace;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+.skill-title h2 {
+    font-size: 30px;
+
+    letter-spacing: -1px;
+}
+
+
+.skill-tags {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.skill-tags span {
+    padding: 13px 18px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 100px;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+
+.skill-tags span:hover {
+    background: #111;
+
+    color: white;
+
+    border-color: #111;
+}
+
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.approach-grid > div {
+    padding: 30px;
+
+    border: 1px solid #292929;
+}
+
+
+.approach-grid span {
+    font-family: "DM Mono", monospace;
+
+    color: #ff5c35;
+
+    font-size: 11px;
+}
+
+
+.approach-grid h3 {
+    margin: 70px 0 10px;
+
+    font-size: 22px;
+}
+
+
+.approach-grid p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PROJECT CASE STUDY
+========================================= */
+
+.case-study {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 40px;
+
+    padding: 90px 0;
+
+    border-top: 1px solid #d5d5cf;
+}
+
+
+.case-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 13px;
+
+    color: #999;
+}
+
+
+.case-content {
+    max-width: 900px;
+}
+
+
+.case-content h2 {
+    font-size: 75px;
+
+    letter-spacing: -5px;
+
+    line-height: 1;
+}
+
+
+.case-subtitle {
+    font-size: 20px;
+
+    color: #777;
+
+    margin: 10px 0 35px;
+}
+
+
+.case-content > p:not(.eyebrow):not(.case-subtitle) {
+    max-width: 760px;
+
+    color: #666;
+
+    font-size: 16px;
+
+    margin-bottom: 45px;
+}
+
+
+.case-columns {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+
+.case-columns h4 {
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+
+.case-columns ul {
+    list-style: none;
+}
+
+
+.case-columns li {
+    color: #666;
+
+    font-size: 14px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid #e0e0da;
+}
+
+
+.tech-strip {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 45px;
+}
+
+
+.tech-strip span {
+    background: #111;
+
+    color: white;
+
+    padding: 9px 15px;
+
+    border-radius: 100px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   ARTIFACTS
+========================================= */
+
+.artifact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.artifact-card {
+    background: white;
+
+    min-height: 300px;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+.artifact-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+
+.artifact-icon {
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    color: #ff5c35;
+}
+
+
+.artifact-card h3 {
+    margin-top: 100px;
+
+    font-size: 25px;
+}
+
+
+.artifact-card p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-top: 10px;
+}
+
+
+.artifact-label {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 35px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: #999;
+}
+
+
+.artifact-warning {
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.artifact-warning span {
+    color: #ff5c35;
+}
+
+
+.dark-description {
+    color: #888;
+
+    max-width: 600px;
+}
+
+
+/* =========================================
+   RESUME
+========================================= */
+
+.resume-card {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+.resume-card h2 {
+    font-size: 50px;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 10px;
+}
+
+
+.resume-card p:not(.eyebrow) {
+    color: #777;
+
+    max-width: 600px;
+}
+
+
+.resume-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    min-width: 190px;
+}
+
+
+.resume-summary-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 30px;
+
+    border: 1px solid #ddd;
+}
+
+
+.resume-summary-grid div {
+    padding: 30px;
+
+    border-right: 1px solid #ddd;
+}
+
+
+.resume-summary-grid div:last-child {
+    border-right: none;
+}
+
+
+.resume-summary-grid span {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #999;
+
+    margin-bottom: 8px;
+}
+
+
+.resume-summary-grid strong {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-hero {
+    width: min(1000px, 88%);
+
+    margin: auto;
+
+    padding: 160px 0 100px;
+}
+
+
+.contact-hero h1 {
+    font-size: clamp(65px, 9vw, 120px);
+
+    line-height: 0.87;
+
+    letter-spacing: -7px;
+}
+
+
+.contact-hero h1 span {
+    color: #ff5c35;
+}
+
+
+.contact-hero > p:last-child {
+    color: #777;
+
+    max-width: 500px;
+
+    margin-top: 40px;
+
+    font-size: 18px;
+}
+
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.contact-card {
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    min-height: 220px;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+.contact-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #111;
+}
+
+
+.contact-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 17px;
+
+    color: #999;
+
+    letter-spacing: 1px;
+}
+
+
+.contact-card h3 {
+    margin-top: 65px;
+
+    font-size: 21px;
+
+    word-break: break-word;
+}
+
+
+.contact-arrow {
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 25px;
+
+    color: #ff5c35;
+
+    font-size: 25px;
+}
+
+
+.availability {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.availability span {
+    border: 1px solid #333;
+
+    padding: 14px 20px;
+
+    border-radius: 100px;
+
+    font-size: 13px;
+
+    color: #aaa;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    min-height: 100px;
+
+    padding: 30px 6vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-top: 1px solid #ddd;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+footer div {
+    display: flex;
+
+    gap: 25px;
+}
+
+
+footer a:hover {
+    color: #111;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+
+    .navbar nav {
+        position: absolute;
+
+        top: 86px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #f5f5f0;
+
+        border-bottom: 1px solid #ddd;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .navbar nav.show {
+        display: flex;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 80px 0;
+
+        min-height: auto;
+    }
+
+
+    .hero-card {
+        max-width: 500px;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .artifact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .approach-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .skill-category {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .resume-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 80px 0;
+    }
+
+
+    .hero h1,
+    .page-hero h1,
+    .contact-hero h1 {
+        font-size: 60px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .section-heading {
+        gap: 15px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .feature-grid,
+    .project-preview-grid,
+    .artifact-grid,
+    .contact-grid,
+    .resume-summary-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .feature-card {
+        min-height: 250px;
+    }
+
+
+    .feature-card h3 {
+        margin-top: 60px;
+    }
+
+
+    .case-study {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 65px 0;
+    }
+
+
+    .case-content h2 {
+        font-size: 55px;
+    }
+
+
+    .case-columns {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .check-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .experience-card {
+        padding: 30px;
+    }
+
+
+    .experience-header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding-left: 20px;
+    }
+
+
+    .resume-card {
+        padding: 30px;
+    }
+
+
+    .resume-card h2 {
+        font-size: 38px;
+    }
+
+
+    .resume-links {
+        width: 100%;
+    }
+
+
+    .resume-links .btn {
+        width: 100%;
+    }
+
+
+    .resume-summary-grid div {
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    .resume-summary-grid div:last-child {
+        border-bottom: none;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}
